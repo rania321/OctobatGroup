@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Jadoo | Travel Agency Landing Page UI</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+
+
+    <style>
+        
+
+        .accordion {
+            border: 1px solid #e3e3e3;
+            border-radius: 5px;
+            margin: 0px 0;
+            padding: 0;
+        }
+
+        .accordion-header {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 15px;
+            background-color: #ffffff; /* Blanc pour le fond de l'en-tête */
+            border-bottom: 0px solid #dddddd; /* Gris béton */
+            color: #2c3e50; /* Couleur de base du texte (bleu acier) */
+            position: relative;
+            transition: color 0.3s ease; /* Transition de la couleur du texte */
+        }
+
+        .accordion-header:hover, .accordion-header.active {
+            color: #f39c12; /* Orange pour le texte sur hover et quand actif */
+        }
+
+        .accordion-header::before {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: #f39c12; /* Orange pour le cercle */
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            color: #ffffff; /* Blanc pour le texte du cercle */
+            transition: transform 0.3s ease; /* Transition pour l'animation */
+        }
+
+        .accordion-header.active::before {
+            content: '-';
+            transform: rotate(180deg); /* Rotation pour l'icône moins */
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background-color: #ecf0f1; /* Gris clair */
+            border: 1px solid #d5dedf; /* Gris béton */
+        }
+
+        .accordion-header.active + .accordion-content {
+            display: block;
+        }
+
+        .email {
+            font-style: italic;
+            color: #2c3e50; /* Bleu acier */
+        }
+
+        .name {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #34495e; /* Gris sombre */
+        }
+    </style>
+
+
+  </head>
+
+
+  <body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-5 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="index.html"><img src="assets/img/logonavbar2.png" height="70" alt="logo" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="index.html">Accueil</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="apropos.html">A propos</a></li>
+              <li class="nav-item dropdown px-3 px-xl-4">
+                <a class="nav-link dropdown-toggle fw-medium" href="#" id="dropdownOeuvres" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Oeuvres
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownOeuvres">
+                  <li><a class="dropdown-item" href="#">Architecture</a></li>
+                  <li><a class="dropdown-item" href="#">Carretage</a></li>
+                  <li><a class="dropdown-item" href="#">Peinture</a></li>
+                  <li><a class="dropdown-item" href="electricite.html">Electricité</a></li>
+                  <li><a class="dropdown-item" href="#">Plomberie</a></li>
+                  <li><a class="dropdown-item" href="#">Allucobond</a></li>
+                  <li><a class="dropdown-item" href="metal">Construction Metallique</a></li>
+                </ul>
+              </li>
+              
+              <!-- Add this inside your <head> or before the closing </body> tag -->
+              <style>
+                /* Show dropdown on hover */
+                .nav-item.dropdown:hover .dropdown-menu {
+                  display: block;
+                }
+              
+                /* Ensure the dropdown stays open until fully hovered out */
+                .nav-item.dropdown .dropdown-menu {
+                  margin-top: 0;
+                }
+              </style>
+              
+                            <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="contact.html">Contact</a></li>
+            <!--  <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#!">Login</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="#!">Sign Up</a></li>  -->
+              <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">EN</a>
+                <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" style="border-radius:0.3rem;" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#!">EN</a></li>
+                  <li><a class="dropdown-item" href="#!">BN</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="bg-holder" style="background-image:url(assets/img/hero/hero-bg.svg);"></div>
+
+      
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+     
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+    
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+   
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      
+
+      <section class="pt-5 pt-md-9" id="service">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 mb-4">
+                <div class="vc_column-inner vc_custom_1495106016533"><div class="wpb_wrapper"><div id="ultimate-heading-737466e1b682b3a23" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-737466e1b682b3a23 uvc-5456 " data-hspacer="no_spacer" data-halign="left" style="text-align:left">
+                    <div class="uvc-heading-spacer no_spacer" style="top"></div>
+                    <div class="uvc-main-heading ult-responsive" data-ultimate-target=".uvc-heading.ultimate-heading-737466e1b682b3a23 h2" data-responsive-json-new="{&quot;font-size&quot;:&quot;desktop:26px;&quot;,&quot;line-height&quot;:&quot;desktop:36px;&quot;}">
+                        <h2 style="font-weight:bold;margin-bottom:30px;">Où nous trouver?</h2></div></div><div class="wpb_gmaps_widget wpb_content_element"><div class="wpb_wrapper"><div class="wpb_map_wraper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2766.2017163291716!2d7.088166615381421!3d46.10688739834983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ec84a5c9a1ca1%3A0xc7cfe313ae6f906e!2sRue%20des%20Finettes%2055%2C%201920%20Martigny!5e0!3m2!1sfr!2sch!4v1678539749708!5m2!1sfr!2sch" width="600" height="450" style="border: 0px; pointer-events: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+              <div class="col-lg-6 col-md-6 mb-4">
+                <h2 style="font-weight:bold;margin-bottom:30px;">Informations</h2>
+                <div class="accordion">
+                    <div class="accordion-header">Architecture</div>
+                    <div class="accordion-content">
+                        <p class="name">Marcos Teixeira</p>
+                        <p class="email">architecture@globat.ch</p>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-header">Carrelage</div>
+                    <div class="accordion-content">
+                        <p class="name">Sophie Leblanc</p>
+                        <p class="email">peinture@octobatgroup.com</p>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-header">Peinture</div>
+                    <div class="accordion-content">
+                        <p class="name">Jean Martin</p>
+                        <p class="email">carrelage@octobatgroup.com</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">Electricité</div>
+                    <div class="accordion-content">
+                        <p class="name">Jean Martin</p>
+                        <p class="email">carrelage@octobatgroup.com</p>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-header">Plomberie</div>
+                    <div class="accordion-content">
+                        <p class="name">Jean Martin</p>
+                        <p class="email">carrelage@octobatgroup.com</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">Allucobond</div>
+                    <div class="accordion-content">
+                        <p class="name">Jean Martin</p>
+                        <p class="email">carrelage@octobatgroup.com</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">Construction Metallique</div>
+                    <div class="accordion-content">
+                        <p class="name">Jean Martin</p>
+                        <p class="email">carrelage@octobatgroup.com</p>
+                    </div>
+                </div>
+
+
+              <!--  <div class="contact-info">
+                    <h2 style="font-weight:bold;margin-bottom:30px;">Informations de Contact</h2>
+                  <ul class="list-unstyled mt-3">
+                    <li class="mb-3">
+                      <i class="fas fa-map-marker-alt me-2"></i> 
+                      <span class="text-muted">Adresse : 123 Rue de la Construction, 75001 Paris, France</span>
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-phone-alt me-2"></i>
+                      <span class="text-muted">Téléphone : +33 1 23 45 67 89</span>
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-envelope me-2"></i>
+                      <span class="text-muted">Email : contact@octobatgroup.com</span>
+                    </li>
+                  </ul>
+                </div> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 mt-4">
+                <h5 class="fw-bold">Suivez-nous sur les réseaux sociaux</h5>
+                <ul class="list-inline mt-3">
+                  <li class="list-inline-item me-3">
+                    <a href="#" class="text-muted"><i class="fab fa-facebook fa-2x"></i></a>
+                  </li>
+                  <li class="list-inline-item me-3">
+                    <a href="#" class="text-muted"><i class="fab fa-instagram fa-2x"></i></a>
+                  </li>
+                  <li class="list-inline-item me-3">
+                    <a href="#" class="text-muted"><i class="fab fa-twitter fa-2x"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="text-muted"><i class="fab fa-linkedin fa-2x"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+     
+      
+
+
+
+
+     <!-- ============================================-->
+      <!-- <section> begin ============================-->
+        <section class="pb-0 pb-lg-4">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-7 col-12 mb-4 mb-md-6 mb-lg-0 order-0"> <img class="mb-4" src="assets/img/logonavbar.png" width="150" alt="jadoo" />
+                <p class="fs--1 text-secondary mb-0 fw-medium"><a class="link-900 fs-1 fw-medium text-decoration-none" href="mailto:sbat0096@gmail.com">sbat0096@gmail.com</a></p>
+              </div>
+              <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-1 order-md-2">
+                <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Octobat Group</h4>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="apropos.html">A propos</a></li>
+                  
+                </ul>
+              </div>
+              <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-2 order-md-3">
+                <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Contact</h4>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="contact.html">Contactez nous!</a></li>
+                  <li class="mb-2">Horaire:</li>
+                  <li class="mb-2">De 10H à 15H</li>
+                  <li class="mb-2">Du Lundi au Vendredi.</li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-3 order-md-4">
+                <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Paiement</h4>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2">Livraison</li>
+                  <li class="mb-2">Virement bancaire</li>
+                  <li class="mb-2">Chèque ou Espèces</li>
+                </ul>
+              </div>
+              <div class="col-lg-3 col-md-5 col-12 mb-4 mb-md-6 mb-lg-0 order-lg-4 order-md-1">
+                <div class="icon-group mb-4"> <a class="text-decoration-none icon-item shadow-social" id="facebook" href="#!"><i class="fab fa-facebook-f"> </i></a><a class="text-decoration-none icon-item shadow-social" id="instagram" href="#!"><i class="fab fa-instagram"> </i></a><a class="text-decoration-none icon-item shadow-social" id="twitter" href="#!"><i class="fab fa-twitter"> </i></a></div>
+                <h4 class="fw-medium font-sans-serif text-secondary mb-3">Discover our app</h4>
+                <div class="d-flex align-items-center"> <a href="#!"> <img class="me-2" src="assets/img/play-store.png" alt="play store" /></a><a href="#!"> <img src="assets/img/apple-store.png" alt="apple store" /></a></div>
+              </div>
+            </div>
+          </div><!-- end of .container-->
+  
+        </section>
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+  
+  
+        <div class="py-5 text-center">
+          <p class="mb-0 text-secondary fs--1 fw-medium">   </p>
+        </div>
+      </main>
+      <!-- ===============================================-->
+      <!--    End of Main Content-->
+      <!-- ===============================================-->
+
+
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script>
+        const accordions = document.querySelectorAll('.accordion-header');
+    
+        accordions.forEach(header => {
+            header.addEventListener('click', () => {
+                const activeHeader = document.querySelector('.accordion-header.active');
+                if (activeHeader && activeHeader !== header) {
+                    activeHeader.classList.remove('active');
+                    activeHeader.nextElementSibling.style.display = 'none';
+                }
+    
+                header.classList.toggle('active');
+                const content = header.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
+  </body>
+
+</html>
